@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import Counter from './Counter/Counter';
+
 
 // const getSum = (num1, num2) => {
 //   return num1 + num2
@@ -30,6 +32,10 @@ function App() {
       <h2>Hello World</h2>
       <p>Hi {name}</p>
       <button onClick={handleClick}>Switch name</button>
+      <br />
+      <hr />
+      <br />
+      <Counter />
     </>
   )
 }
