@@ -1,25 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+// const getSum = (num1, num2) => {
+//   return num1 + num2
+// }
 
 function App() {
+
+  // let name = 'Idan'
+  let tempName = 'Idan'
+  const [name, setName] = useState('Idan')
+
+  console.log('Rendering App component with name', name)
+
+  const handleClick = () => {
+    // name = 'Gal'
+    console.log('Inside handleClick')
+    tempName = 'Gal'
+    if (name === 'Gal') {
+      setName('Idan')
+    } else {
+      setName('Gal')
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h2>Hello World</h2>
+      <p>Hi {name}</p>
+      <button onClick={handleClick}>Switch name</button>
+    </>
+  )
 }
+
+//elem = document.createElement('h2')
+//elem.innerText = 'Hello World'
+// <button onClick="handleClick()">Switch name</button>
 
 export default App;
